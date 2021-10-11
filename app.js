@@ -62,4 +62,12 @@ function createBoard() {
 }
 createBoard()
 
+
+let pacmanCurrentIndex = 490
+
+squares[pacmanCurrentIndex].classList.add('pac-man')
+
+
+
+
 })
