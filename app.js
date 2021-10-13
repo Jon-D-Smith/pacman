@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
     const scoreDisplay = document.querySelector('#score')
     const width = 28
+    let score = 0
 
 // Legend
 // 0 - Dots
@@ -116,12 +117,22 @@ function movePacman(e) {
 
   squares[pacmanCurrentIndex].classList.add('pac-man')
 
-  //pacDotEaten()
+  pacDotEaten()
   //powerPelletEaten()
   //checkForGameOver()
   //checkForWin()
 }
 
 document.addEventListener('keyup', movePacman)
+
+function pacDotEaten(){
+  if (squares[pacmanCurrentIndex].classList.contains('pac-dot')){
+    score++
+    scoreDisplay.innerHTML = score
+    squares[pacmanCurrentIndex].classList.remove('pac-dot')
+  }
+  return
+}
+
 
 })
